@@ -5,7 +5,7 @@
 
 - Reference issues by using the # symbol and the issue number
 
-- Consider commiting your message in the format below:
+- Consider commiting your message in the following format below:
     - [feat]: A new feature
     - [fix]: A bug fix
     - [docs]: Changes to documentation
