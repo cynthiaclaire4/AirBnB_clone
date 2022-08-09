@@ -7,7 +7,7 @@ import uuid
 ''' Define class BaseModel'''
 
 class BaseModel:
-    id = string(uuid.uuid4())
+    id = str(uuid.uuid4())
     created_at = datetime
     updated_at = datetime
 
