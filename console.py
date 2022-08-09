@@ -15,7 +15,7 @@ from models.user import User
 class HBNBCommand(cmd.Cmd):
     """ HBNB console """
     prompt = '(hbnb) '
-
+gi
     def do_EOF(self, arg):
         """Exits console"""
         return True
