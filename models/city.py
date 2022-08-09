@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""""
+"""holds city class"""
 from models.base_model import BaseModel
 
 

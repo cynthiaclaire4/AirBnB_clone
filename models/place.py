@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""""""
+"""holds place class"""
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """"""
+    """create place class"""
     city_id = ""
     user_id = ""
     name = ""
