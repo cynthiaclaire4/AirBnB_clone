@@ -28,25 +28,25 @@ class TestFileStorage(unittest.TestCase):
     def test_all(self):
         """Test all"""
         self.assertEqual(self.storage.all(), {})
-    
+
     def test_new(self):
         """Test new"""
         self.storage.new(self.my_model)
         self.assertEqual(self.storage.all()[self.my_model.id], self.my_model)
-    
+
     def test_save(self):
         """Test save"""
         self.storage.save()
         with open("model_file.json", 'r') as f:
             my_dict = json.load(f)
         self.assertEqual(my_dict[self.my_model.id], self.my_model.to_dict())
-    
+
     def test_reload(self):
         """Test reload"""
         self.storage.save()
         self.storage.reload()
         self.assertEqual(self.storage.all()[self.my_model.id], self.my_model)
-    
+
     def test_count(self):
         """Test count"""
         self.storage.save()

@@ -41,7 +41,7 @@ class TestConsole(unittest.TestCase):
         hbnb = self.create()
         hbnb.do_EOF('')
         self.assertEqual(hbnb.do_EOF(''), None)
-    
+
     def test_do_create(self):
         """test do create"""
         hbnb = self.create()
@@ -87,4 +87,3 @@ class TestConsole(unittest.TestCase):
         hbnb = self.create()
         hbnb.do_show_count("BaseModel")
         self.assertEqual(hbnb.do_show_count("BaseModel"), None)
-
