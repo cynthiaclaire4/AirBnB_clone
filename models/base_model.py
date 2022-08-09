@@ -7,7 +7,7 @@ import uuid
 ''' Define class BaseModel'''
 
 class BaseModel:
-    """"""
+    """creating Basemodel class"""
 
     def __init__(self, *args, **kwargs):
         if len(kwargs) == 0:
