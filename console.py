@@ -17,6 +17,7 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
+
 class HBNBCommand(cmd.Cmd):
     """ HBNB console """
     prompt = '(hbnb) '
@@ -34,7 +35,8 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_create(self, arg):
-        if len(arg)  == 0:
+        '''creates new instance of a class'''
+        if len(arg) == 0:
             welcome.missing()
             return
         try:
@@ -42,11 +44,12 @@ class HBNBCommand(cmd.Cmd):
             instance = eval(arg[0])()
             instance.save()
             print(instance.id)
-        except:
+        except NameError:
             welcome.cls_d_exist()
             return
-        
+
     def do_show(self, arg):
+        """Prints an instance as a string based on the class and id"""
         arg = shlex.split(arg)
         if len(arg) == 0:
             welcome.missing()
@@ -68,6 +71,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
     def do_destroy(self, arg):
+        '''Deletes instance based on class and id'''
         arg = shlex.split(arg)
         if len(arg) == 0:
             welcome.missing()
@@ -90,8 +94,9 @@ class HBNBCommand(cmd.Cmd):
         except KeyError:
             welcome.no_instance()
             return
-    
+
     def do_all(self, arg):
+        '''prints string representation of instance'''
         # arg = shlex.split(arg)
         available_obj = load_engine()
         return_list = list()
@@ -111,6 +116,7 @@ class HBNBCommand(cmd.Cmd):
         print(return_list)
 
     def do_update(self, arg):
+        """Update an instance based on the class name, id, attribute & value"""
         arg = shlex.split(arg)
         available_obj = load_engine()
         if len(arg) == 0:
@@ -147,4 +153,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-    

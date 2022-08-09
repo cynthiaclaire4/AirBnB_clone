@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-""""""
+"""contains file storage class"""
 
 
 import models
 import json
 from models.user import User
+
 
 class FileStorage():
     """"""
@@ -14,7 +15,7 @@ class FileStorage():
     def all(self):
         """returns the dictionary __objects"""
         return FileStorage.__objects
-    
+
     def new(self, obj):
         key = str(obj.__class__.__name__) + "." + str(obj.id)
         FileStorage.__objects[key] = obj
@@ -34,7 +35,3 @@ class FileStorage():
                 FileStorage.__objects = json.load(f)
         except FileNotFoundError:
             pass
-
-
-
-
