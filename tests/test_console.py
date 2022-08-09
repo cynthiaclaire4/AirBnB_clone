@@ -74,7 +74,8 @@ class TestConsole(unittest.TestCase):
         hbnb = self.create()
         hbnb.do_create("BaseModel")
         hbnb.do_update("BaseModel.1", "name", "Holberton")
-        self.assertEqual(hbnb.do_update("BaseModel.1", "name", "Holberton"), None)
+        self.assertEqual(hbnb.do_update("BaseModel.1", "name",
+                                        "Holberton"), None)
 
     def test_do_count(self):
         """test do count"""

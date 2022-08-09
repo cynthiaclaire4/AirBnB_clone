@@ -34,7 +34,9 @@ class TestBase(unittest.TestCase):
         my_model = BaseModel()
         my_model.name = "My_First_Model"
         my_model.my_number = 89
-        self.assertEqual(str(my_model), "[BaseModel] ({}) {}".format(my_model.id, my_model.__dict__))
+        self.assertEqual(str(my_model),
+                         "[BaseModel] ({}) {}".format(my_model.id,
+                                                      my_model.__dict__))
 
     def test_save(self):
         """test save"""
@@ -49,8 +51,10 @@ class TestBase(unittest.TestCase):
         my_model.my_number = 89
         my_model_dict = my_model.to_dict()
         self.assertEqual(my_model_dict['__class__'], "BaseModel")
-        self.assertEqual(my_model_dict['created_at'], my_model.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f"))
-        self.assertEqual(my_model_dict['updated_at'], my_model.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f"))
+        self.assertEqual(my_model_dict['created_at'],
+                         my_model.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f"))
+        self.assertEqual(my_model_dict['updated_at'],
+                         my_model.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f"))
         self.assertEqual(my_model_dict['id'], my_model.id)
         self.assertEqual(my_model_dict['name'], my_model.name)
         self.assertEqual(my_model_dict['my_number'], my_model.my_number)
